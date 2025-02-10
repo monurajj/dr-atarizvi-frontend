@@ -1,102 +1,133 @@
 import React from "react";
 import { motion } from "framer-motion";
+import heropageImage from "../assets/firsthomepageimage.png";
 
 const Home = () => {
   return (
-    <div>
-      {/* Hero Section */}
-      <div
-        className="bg-primary text-white py-32 bg-cover bg-center"
-        style={{ backgroundImage: "url('/hero-bg.jpg')" }}
-      >
-        <div className="container mx-auto text-center">
-          <motion.h1
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-5xl font-bold mb-4"
-          >
-            Welcome to Dr. Atarizvi Clinic
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-xl mb-8"
-          >
-            Your health is our priority. We provide compassionate and
-            professional care.
-          </motion.p>
-          <motion.a
-            href="/appointments"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="bg-secondary text-white px-8 py-3 rounded-lg font-semibold hover:bg-accent transition duration-300"
-          >
-            Book an Appointment
-          </motion.a>
-        </div>
-      </div>
-
-      {/* About Section */}
-      <div className="container mx-auto py-16">
-        <h2 className="text-3xl font-bold text-center mb-8">About Us</h2>
-        <div className="grid md:grid-cols-2 gap-8">
+    <div className="min-h-screen bg-green-100 font-sans ">
+      {/* Hero Section with Split Layout */}
+      <div className="container mx-auto">
+        <div className="flex flex-col lg:flex-row min-h-screen">
+          {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            className="lg:w-1/2 flex flex-col justify-center p-8 lg:p-16"
           >
-            <img
-              src="https://via.placeholder.com/500x300"
-              alt="Dr. Atarizvi"
-              className="rounded-lg"
-            />
+            <h1 className="font-serif text-4xl lg:text-6xl font-bold text-emerald-950 mb-6 tracking-tight">
+              Welcome to
+              <span className="block text-emerald-700 mt-2 font-sans">
+                Dr. Atarizvi Clinic
+              </span>
+            </h1>
+
+            <p className="text-lg text-emerald-800 mb-8 leading-relaxed font-light">
+              With over 15 years of dedicated service, we combine cutting-edge
+              medical expertise with compassionate care. Our commitment to your
+              health goes beyond treatment – we focus on your overall well-being
+              and long-term health goals.
+            </p>
+
+            <div className="space-y-6 mb-8">
+              <div className="flex items-center">
+                <div className="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center">
+                  <svg
+                    className="w-6 h-6 text-emerald-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+                <p className="ml-4 text-emerald-800 font-medium">
+                  Personalized Treatment Plans
+                </p>
+              </div>
+              <div className="flex items-center">
+                <div className="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center">
+                  <svg
+                    className="w-6 h-6 text-emerald-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+                <p className="ml-4 text-emerald-800 font-medium">
+                  Flexible Scheduling
+                </p>
+              </div>
+              <div className="flex items-center">
+                <div className="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center">
+                  <svg
+                    className="w-6 h-6 text-emerald-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                    />
+                  </svg>
+                </div>
+                <p className="ml-4 text-emerald-800 font-medium">
+                  State-of-the-art Facility
+                </p>
+              </div>
+            </div>
+
+            <motion.button
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              className="bg-emerald-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-emerald-700 transition duration-300 w-fit tracking-wide"
+            >
+              Schedule a Consultation
+            </motion.button>
           </motion.div>
+
+          {/* Right Content - Doctor Image */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            className="lg:w-1/2 relative"
           >
-            <p className="text-gray-700 mb-4">
-              Dr. Atarizvi Clinic is dedicated to providing high-quality
-              healthcare services. With over 15 years of experience, Dr.
-              Atarizvi specializes in general consultations, diagnostics, and
-              personalized treatment plans.
-            </p>
-            <p className="text-gray-700">
-              Our mission is to ensure the well-being of our patients through
-              compassionate care and advanced medical practices.
-            </p>
-          </motion.div>
-        </div>
-      </div>
-
-      {/* Services Section */}
-      <div className="bg-background py-16">
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-8">Our Services</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              "General Consultations",
-              "Diagnostics",
-              "Specialized Treatments",
-            ].map((service, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-                className="bg-white p-6 rounded-lg shadow-lg text-center"
-              >
-                <h3 className="text-xl font-bold mb-4">{service}</h3>
-                <p className="text-gray-700">
-                  Comprehensive health check-ups and consultations.
+            <div className="h-full w-full">
+              <img
+                src={heropageImage}
+                alt="Dr. Atarizvi"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-emerald-900/90 to-transparent p-8">
+                <h2 className="text-white text-3xl font-serif font-bold tracking-tight">
+                  Dr. Sarah Atarizvi
+                </h2>
+                <p className="text-emerald-50 mt-2 font-medium tracking-wide">
+                  Chief Medical Director
                 </p>
-              </motion.div>
-            ))}
-          </div>
+                <p className="text-emerald-100 mt-1 font-light">
+                  MD, FACP - Internal Medicine
+                </p>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </div>
