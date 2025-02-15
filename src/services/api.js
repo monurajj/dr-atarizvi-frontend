@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5001/api/appointments"; // Replace with your backend URL
+const API_URL = "http://localhost:5001/api/appointments";
 
 // Create a new appointment
 const createAppointment = async (appointmentData) => {
