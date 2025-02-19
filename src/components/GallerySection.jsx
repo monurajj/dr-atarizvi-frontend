@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ZoomIn, ChevronLeft, ChevronRight } from "lucide-react";
 import Image01 from "../assets/GallaryImage/awart01.jpeg";
@@ -13,50 +13,54 @@ const GallerySection = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [direction, setDirection] = useState(0); // 1 for next, -1 for prev
 
-  const galleryItems = [
-    {
-      image: Image01,
-      title: "State-of-the-Art Facility",
-      description:
-        "Our modern medical facility equipped with the latest technology for optimal patient care.",
-      category: "Facilities",
-    },
-    {
-      image: Image02,
-      title: "Patient Consultation Room",
-      description:
-        "Comfortable and private consultation spaces designed for detailed patient discussions.",
-      category: "Patient Care",
-    },
-    {
-      image: Image03,
-      title: "Advanced Medical Equipment",
-      description:
-        "Latest medical technology ensuring precise diagnostics and treatment.",
-      category: "Technology",
-    },
-    {
-      image: Image04,
-      title: "Advanced Medical Equipment",
-      description:
-        "Latest medical technology ensuring precise diagnostics and treatment.",
-      category: "Technology",
-    },
-    {
-      image: Image05,
-      title: "Advanced Medical Equipment",
-      description:
-        "Latest medical technology ensuring precise diagnostics and treatment.",
-      category: "Technology",
-    },
-    {
-      image: Image06,
-      title: "Advanced Medical Equipment",
-      description:
-        "Latest medical technology ensuring precise diagnostics and treatment.",
-      category: "Technology",
-    },
-  ];
+  // Memoize the galleryItems array to prevent unnecessary recreations
+  const galleryItems = useMemo(
+    () => [
+      {
+        image: Image01,
+        title: "State-of-the-Art Facility",
+        description:
+          "Our modern medical facility equipped with the latest technology for optimal patient care.",
+        category: "Facilities",
+      },
+      {
+        image: Image02,
+        title: "Patient Consultation Room",
+        description:
+          "Comfortable and private consultation spaces designed for detailed patient discussions.",
+        category: "Patient Care",
+      },
+      {
+        image: Image03,
+        title: "Advanced Medical Equipment",
+        description:
+          "Latest medical technology ensuring precise diagnostics and treatment.",
+        category: "Technology",
+      },
+      {
+        image: Image04,
+        title: "Advanced Medical Equipment",
+        description:
+          "Latest medical technology ensuring precise diagnostics and treatment.",
+        category: "Technology",
+      },
+      {
+        image: Image05,
+        title: "Advanced Medical Equipment",
+        description:
+          "Latest medical technology ensuring precise diagnostics and treatment.",
+        category: "Technology",
+      },
+      {
+        image: Image06,
+        title: "Advanced Medical Equipment",
+        description:
+          "Latest medical technology ensuring precise diagnostics and treatment.",
+        category: "Technology",
+      },
+    ],
+    [] // Empty dependency array ensures this is only created once
+  );
 
   // Preload images for smoother transitions
   useEffect(() => {
@@ -64,7 +68,7 @@ const GallerySection = () => {
       const img = new Image();
       img.src = item.image;
     });
-  }, [galleryItems]); // Add galleryItems to the dependency array
+  }, [galleryItems]); // Now galleryItems is stable due to useMemo
 
   const navigateGallery = (direction) => {
     const newIndex =
