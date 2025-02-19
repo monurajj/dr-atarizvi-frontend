@@ -22,7 +22,9 @@ const Footer = () => {
           {/* Social Media Links */}
           <div className="flex justify-center space-x-6 mb-6">
             <motion.a
-              href="#"
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               className="text-emerald-200 hover:text-emerald-400 transition duration-300"
@@ -30,7 +32,9 @@ const Footer = () => {
               <FaFacebook size={24} />
             </motion.a>
             <motion.a
-              href="#"
+              href="https://twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               className="text-emerald-200 hover:text-emerald-400 transition duration-300"
@@ -38,7 +42,9 @@ const Footer = () => {
               <FaTwitter size={24} />
             </motion.a>
             <motion.a
-              href="#"
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               className="text-emerald-200 hover:text-emerald-400 transition duration-300"
@@ -46,7 +52,9 @@ const Footer = () => {
               <FaInstagram size={24} />
             </motion.a>
             <motion.a
-              href="#"
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               className="text-emerald-200 hover:text-emerald-400 transition duration-300"
@@ -58,19 +66,19 @@ const Footer = () => {
           {/* Footer Links */}
           <div className="flex justify-center space-x-6 mb-6">
             <a
-              href="#"
+              href="/privacy-policy"
               className="text-emerald-200 hover:text-emerald-400 transition duration-300"
             >
               Privacy Policy
             </a>
             <a
-              href="#"
+              href="/terms-of-service"
               className="text-emerald-200 hover:text-emerald-400 transition duration-300"
             >
               Terms of Service
             </a>
             <a
-              href="#"
+              href="/contact"
               className="text-emerald-200 hover:text-emerald-400 transition duration-300"
             >
               Contact Us
