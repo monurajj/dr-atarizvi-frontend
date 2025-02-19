@@ -5,6 +5,8 @@ import { MessageCircle, X, ChevronUp } from "lucide-react";
 import GallerySection from "../components/GallerySection";
 import ConditionsSection from "../components/ConditionsSection";
 import WhyChooseUsSection from "../components/WhyChooseUsSection";
+import ChatSupport from "../components/ChatSupport";
+
 import {
   // MessageCircle,
   // X,
@@ -194,7 +196,7 @@ const Home = () => {
       <WhyChooseUsSection whyChooseUs={whyChooseUs} />
 
       {/* Chat Support Button */}
-      <motion.div
+      {/* <motion.div
         className="fixed bottom-6 right-6 z-50"
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
@@ -210,10 +212,10 @@ const Home = () => {
             <MessageCircle className="w-6 h-6" />
           )}
         </button>
-      </motion.div>
+      </motion.div> */}
 
       {/* Chat Support Window */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: isChatOpen ? 1 : 0, y: isChatOpen ? 0 : 100 }}
         transition={{ type: "spring", stiffness: 260, damping: 20 }}
@@ -235,7 +237,9 @@ const Home = () => {
             We'll be integrating with Gemini API shortly.
           </p>
         </div>
-      </motion.div>
+      </motion.div> */}
+
+        <ChatSupport/>
 
       {/* Scroll to Top Button */}
       <motion.button
