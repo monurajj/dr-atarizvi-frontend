@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import doctorImage from "../assets/firsthomepageimage.png";
-import { MessageCircle, X, ChevronUp } from "lucide-react";
+import {ChevronUp} from "lucide-react";
 import GallerySection from "../components/GallerySection";
 import ConditionsSection from "../components/ConditionsSection";
 import WhyChooseUsSection from "../components/WhyChooseUsSection";
@@ -18,11 +18,8 @@ import {
   Trophy,
   Users,
   Clock,
-  // ChevronUp,
-  Image as ImageIcon,
 } from "lucide-react";
 const Home = () => {
-  const [isChatOpen, setIsChatOpen] = useState(false);
 
   const conditions = [
     {

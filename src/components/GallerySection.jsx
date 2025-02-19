@@ -64,7 +64,7 @@ const GallerySection = () => {
       const img = new Image();
       img.src = item.image;
     });
-  }, []);
+  }, [galleryItems]); // Add galleryItems to the dependency array
 
   const navigateGallery = (direction) => {
     const newIndex =
