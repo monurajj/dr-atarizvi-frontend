@@ -153,11 +153,11 @@ const GallerySection = () => {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="relative rounded-xl shadow-lg bg-white"
+              className="relative rounded-xl shadow-lg bg-white overflow-hidden"
               whileHover={{ y: -5, transition: { duration: 0.2 } }}
             >
               <motion.div
-                className="relative h-[15rem] cursor-pointer overflow-hidden rounded-t-xl"
+                className="relative h-[15rem] cursor-pointer overflow-hidden"
                 onClick={() => {
                   setSelectedItem(item);
                   setSelectedIndex(index);
@@ -211,7 +211,7 @@ const GallerySection = () => {
             exit={{ opacity: 0 }}
           >
             <motion.div
-              className="relative max-w-5xl w-full bg-white rounded-lg overflow-hidden"
+              className="relative max-w-5xl w-full bg-white rounded-lg overflow-hidden shadow-2xl"
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
